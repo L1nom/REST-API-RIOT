@@ -78,8 +78,7 @@ def getSummonerTopChampionsByName(name):
 def getMatchHistoryByNameLOL(name):
     me = lol_watcher.summoner.by_name(my_region, name)
     match_list = lol_watcher.match.matchlist_by_puuid('americas', me['puuid'], type="ranked", count=10)
-
-    match_detail = lol_watcher.match.by_id('americas', match_list[0])
+    match_detail = lol_watcher.match.by_id('americas', match_list[-1])
     player_game_details = {}
     for player in match_detail["info"]["participants"]:
         if player["summonerName"] == name:
@@ -130,7 +129,7 @@ def getMatchHistoryByNameTFT(name):
     return player_game_details
 
 
-# getMatchHistoryByNameLOL("Linom")
+# print(getMatchHistoryByNameLOL("Linom"))
 # getSummonerTopChampionsByName("Linom")
 # getMatchHistoryByName("Linom")
 # print(getMatchHistoryByNameTFT("Linom"))
