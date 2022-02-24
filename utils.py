@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 from apikey import *
 
-lol_watcher = LolWatcher("APIKEY")
-val_watcher = ValWatcher("APIKEY")
-tft_watcher = TftWatcher("APIKEY")
+lol_watcher = LolWatcher(API_KEY)
+val_watcher = ValWatcher(R_KEY)
+tft_watcher = TftWatcher(R_KEY)
 my_region = "na1"
 data_version = lol_watcher.data_dragon.versions_for_region(my_region)
 latest_champion_ver = data_version['n']['champion']
