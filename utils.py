@@ -3,7 +3,7 @@ from boto.s3.connection import S3Connection
 import os
 s3 = S3Connection(os.environ['API_KEY'], os.environ['R_KEY'])
 
-lol_watcher = LolWatcher(s3.lookup('API_KEY'))
+lol_watcher = LolWatcher(os.getenv('API_KEY'))
 val_watcher = ValWatcher(s3.lookup('R_KEY'))
 tft_watcher = TftWatcher(s3.lookup('R_KEY'))
 my_region = "na1"
