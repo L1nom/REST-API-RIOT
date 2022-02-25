@@ -1,6 +1,4 @@
 from riotwatcher import LolWatcher, ValWatcher, TftWatcher, RiotWatcher, ApiError
-import pandas as pd
-import numpy as np
 from apikey import *
 
 lol_watcher = LolWatcher(API_KEY)
