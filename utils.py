@@ -1,9 +1,11 @@
 from riotwatcher import LolWatcher, ValWatcher, TftWatcher, ApiError
-from apikey import *
+from boto.s3.connection import S3Connection
+import os
+s3 = S3Connection(os.environ['API_KEY'], os.environ['R_KEY'])
 
-lol_watcher = LolWatcher(API_KEY)
-val_watcher = ValWatcher(R_KEY)
-tft_watcher = TftWatcher(R_KEY)
+lol_watcher = LolWatcher(s3.lookup('API_KEY'))
+val_watcher = ValWatcher(s3.lookup('R_KEY'))
+tft_watcher = TftWatcher(s3.lookup('R_KEY'))
 my_region = "na1"
 data_version = lol_watcher.data_dragon.versions_for_region(my_region)
 latest_champion_ver = data_version['n']['champion']
