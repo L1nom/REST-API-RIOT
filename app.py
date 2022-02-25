@@ -4,6 +4,12 @@ from utils import *
 app = Flask(__name__)
 
 
+@app.route("/")
+def index():
+    current_routes = "Current routes: <br><br> summonerDetails<br><br>summonerChamps<br><br>summonerLastMatch"
+    return current_routes
+
+
 @app.route("/summonerDetails", methods=["GET"])
 def summonerDetails():
     args = request.args
