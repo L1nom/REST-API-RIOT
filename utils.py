@@ -1,7 +1,5 @@
 from riotwatcher import LolWatcher, ValWatcher, TftWatcher, ApiError
-from boto.s3.connection import S3Connection
 import os
-# s3 = S3Connection(os.environ['API_KEY'], os.environ['R_KEY'])
 
 lol_watcher = LolWatcher(os.environ['API_KEY'])
 val_watcher = ValWatcher(os.environ['R_KEY'])
