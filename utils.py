@@ -1,4 +1,4 @@
-from riotwatcher import LolWatcher, ValWatcher, TftWatcher, RiotWatcher, ApiError
+from riotwatcher import LolWatcher, ValWatcher, TftWatcher, ApiError
 from apikey import *
 
 lol_watcher = LolWatcher(API_KEY)
