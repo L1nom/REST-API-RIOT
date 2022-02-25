@@ -17,7 +17,6 @@ def summonerDetails():
 def summonerChamps():
     args = request.args
     name = args.get("name")
-    print(name)
     return {"API": "Response Positive",
             "Champs": getSummonerTopChampionsByName(name)}
 
@@ -26,7 +25,9 @@ def summonerChamps():
 def summonerGame():
     args = request.args
     name = args.get("name")
-    print(name)
-
     return {"API": "Response Positive",
             "Details": getMatchHistoryByNameLOL(name)}
+
+
+if __name__ == "__main__":
+    app.run()
